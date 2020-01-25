@@ -6,7 +6,6 @@
 
 > Aplicação de redirecionamento Client-Side (response.sendRedirect()) e Server-Side (RequestDispatcher).
 
-> Aplicação do Pattern Strategy para direcionamento das ações na [Servlet]
-(https://github.com/danillorcb/servlets/blob/master/src/br/com/danillorcb/gerenciador/servlet/EntradaServlet.java) principal. 
+> Aplicação do Pattern Strategy para direcionamento das ações na [Servlet](https://github.com/danillorcb/servlets/blob/master/src/br/com/danillorcb/gerenciador/servlet/EntradaServlet.java) principal. 
 
 
