@@ -1,10 +1,10 @@
-package br.com.danillorcb.gerenciador.dao;
+package br.com.danillorcb.servlets.dao;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import br.com.danillorcb.gerenciador.model.Empresa;
+import br.com.danillorcb.servlets.model.Empresa;
 
 public class EmpresaDAO {
 

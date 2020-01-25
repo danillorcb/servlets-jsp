@@ -1,4 +1,4 @@
-package br.com.danillorcb.gerenciador.acao;
+package br.com.danillorcb.servlets.acao;
 
 import java.io.IOException;
 
@@ -8,5 +8,5 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface AcaoStrategy {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }

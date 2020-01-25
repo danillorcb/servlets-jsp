@@ -8,8 +8,8 @@
 </head>
 <body>
 <ul>
-	<li><a href="/gerenciador/formNovaEmpresa.jsp">Cadastrar Nova Empresa</a></li>
-	<li><a href="/gerenciador/listaEmpresas">Listar Empresas</a></li>
+	<li><a href="/servlets-jsp/formNovaEmpresa.jsp">Cadastrar Nova Empresa</a></li>
+	<li><a href="/servlets-jsp/listaEmpresas">Listar Empresas</a></li>
 </ul>
 </body>
 </html>

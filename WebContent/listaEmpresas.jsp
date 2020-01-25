@@ -21,11 +21,11 @@
 				<tr>
 					<td>${ empresa.nome }</td>
 					<td><fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/></td>
-					<td><a href="/gerenciador/mostraEmpresa?id=${ empresa.id }">Altera</a></td>
-					<td><a href="/gerenciador/removeEmpresa?id=${ empresa.id }">Remove</a></td>
+					<td><a href="/servlets-jsp/mostraEmpresa?id=${ empresa.id }">Altera</a></td>
+					<td><a href="/servlets-jsp/removeEmpresa?id=${ empresa.id }">Remove</a></td>
 				</tr>	
 			</c:forEach>
 	</table>
-	<a href="/gerenciador/formNovaEmpresa.jsp">Nova Empresa</a>
+	<a href="/servlets-jsp/formNovaEmpresa.jsp">Nova Empresa</a>
 </body>
 </html>

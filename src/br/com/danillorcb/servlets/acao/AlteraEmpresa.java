@@ -1,4 +1,4 @@
-package br.com.danillorcb.gerenciador.acao;
+package br.com.danillorcb.servlets.acao;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -9,13 +9,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.danillorcb.gerenciador.dao.EmpresaDAO;
-import br.com.danillorcb.gerenciador.model.Empresa;
+import br.com.danillorcb.servlets.dao.EmpresaDAO;
+import br.com.danillorcb.servlets.model.Empresa;
 
 public class AlteraEmpresa implements AcaoStrategy {
 
 	@Override
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String nome = request.getParameter("nome");
 
@@ -36,7 +36,7 @@ public class AlteraEmpresa implements AcaoStrategy {
 		empresa.setNome(nome);
 		empresa.setDataAbertura(data);
 		
-		response.sendRedirect("listaEmpresas");
+		return "redirect:listaEmpresas";		
 	}
 
 }

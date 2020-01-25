@@ -1,4 +1,4 @@
-package br.com.danillorcb.gerenciador.model;
+package br.com.danillorcb.servlets.model;
 
 import java.util.Date;
 
