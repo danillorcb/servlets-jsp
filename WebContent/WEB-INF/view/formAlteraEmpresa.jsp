@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<c:url value="/alteraEmpresa" var="linkEntradaServlet"></c:url>
+<c:url value="/entrada" var="linkEntradaServlet"></c:url>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,7 @@
 	Data de abertura: <input type="text" name="data" value="<fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/>">
 	<br>
 	<input type="hidden" name="id" value="${ empresa.id }" >
+	<input type="hidden" name="acao" value="AlteraEmpresa" >
 	<input type="submit"> 
 </form>
 </body>

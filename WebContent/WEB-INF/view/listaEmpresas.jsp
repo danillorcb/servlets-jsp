@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List,br.com.danillorcb.gerenciador.model.Empresa" %>
+<%@ page import="java.util.List,br.com.danillorcb.servlets.model.Empresa" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,6 +10,8 @@
 <title>Lista das Empresas</title>
 </head>
 <body>
+	<c:import url="logout.jsp"></c:import>
+	
 	<c:if test="${ not empty empresa }">
 		Empresa ${ empresa } cadastrada com sucesso!
 	</c:if>
@@ -21,11 +23,11 @@
 				<tr>
 					<td>${ empresa.nome }</td>
 					<td><fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/></td>
-					<td><a href="/servlets-jsp/mostraEmpresa?id=${ empresa.id }">Altera</a></td>
-					<td><a href="/servlets-jsp/removeEmpresa?id=${ empresa.id }">Remove</a></td>
+					<td><a href="/servlets-jsp/entrada?acao=MostraEmpresa&id=${ empresa.id }">Altera</a></td>
+					<td><a href="/servlets-jsp/entrada?acao=RemoveEmpresa&id=${ empresa.id }">Remove</a></td>
 				</tr>	
 			</c:forEach>
 	</table>
-	<a href="/servlets-jsp/formNovaEmpresa.jsp">Nova Empresa</a>
+	<a href="/servlets-jsp/entrada?acao=NovaEmpresaForm">Nova Empresa</a>
 </body>
 </html>

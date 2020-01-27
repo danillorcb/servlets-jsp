@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.danillorcb.servlets.dao.EmpresaDAO;
 
-public class RemoveEmpresa implements AcaoStrategy {
+public class RemoveEmpresa implements Acao {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,7 +19,7 @@ public class RemoveEmpresa implements AcaoStrategy {
 		EmpresaDAO dao = new EmpresaDAO();
 		dao.excluir(id);
 		
-		return "redirect:listaEmpresas";
+		return "redirect:ListaEmpresas";
 	}
 
 }

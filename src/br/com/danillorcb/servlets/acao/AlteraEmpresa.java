@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.danillorcb.servlets.dao.EmpresaDAO;
 import br.com.danillorcb.servlets.model.Empresa;
 
-public class AlteraEmpresa implements AcaoStrategy {
+public class AlteraEmpresa implements Acao {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +36,7 @@ public class AlteraEmpresa implements AcaoStrategy {
 		empresa.setNome(nome);
 		empresa.setDataAbertura(data);
 		
-		return "redirect:listaEmpresas";		
+		return "redirect:ListaEmpresas";		
 	}
 
 }

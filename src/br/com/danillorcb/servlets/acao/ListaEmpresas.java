@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.danillorcb.servlets.dao.EmpresaDAO;
 import br.com.danillorcb.servlets.model.Empresa;
 
-public class ListaEmpresas implements AcaoStrategy {
+public class ListaEmpresas implements Acao {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.danillorcb.servlets.dao.EmpresaDAO;
 import br.com.danillorcb.servlets.model.Empresa;
 
-public class NovaEmpresa implements AcaoStrategy {
+public class NovaEmpresa implements Acao {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,7 +48,7 @@ public class NovaEmpresa implements AcaoStrategy {
 		// Redirecionamento client-side - para Servlet
 		request.setAttribute("empresa", empresa.getNome());
 		
-		return "redirect:listaEmpresas";
+		return "redirect:ListaEmpresas";
 	}
 
 }
