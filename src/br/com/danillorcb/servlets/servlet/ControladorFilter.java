@@ -2,31 +2,36 @@ package br.com.danillorcb.servlets.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.sun.xml.internal.ws.util.StringUtils;
 
 import br.com.danillorcb.servlets.acao.Acao;
 
-@WebServlet("/entrada")
-public class EntradaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+//@WebFilter("/entrada")
+public class ControladorFilter implements Filter {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
 
 		// Usando parâmetro via get (/entrada?acao=)
-		String paramAcao = request.getParameter("acao");
+//		String paramAcao = request.getParameter("acao");
 		
 		// Usando parâmetro via recurso (/recurso)
 //		String[] split = request.getRequestURI().split("/");
 //		String paramAcao = split[split.length-1];
-//		paramAcao = StringUtils.capitalize(paramAcao);
+//		paramAcao = StringUtils.capitalize(paramAcao);		
+		
+		System.out.println(this.getClass().getName());
+		
+		HttpServletRequest request = (HttpServletRequest) servletRequest;
+		HttpServletResponse response = (HttpServletResponse) servletResponse;
+		
+		String paramAcao = request.getParameter("acao");
 		
 		// Instanciando a classe que implementa Acao e chamando o método executa()
 		String nomeDaClasse = "br.com.danillorcb.servlets.acao." + paramAcao;
@@ -46,5 +51,4 @@ public class EntradaServlet extends HttpServlet {
 			response.sendRedirect("entrada?acao=" + encaminhamento[1]);
 		}
 	}
-
 }
